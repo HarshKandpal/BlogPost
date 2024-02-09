@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import authService from '../appwrite/auth'
 import './App.css'
 import {Login, Logout} from './store/authSlice'
-import {Footer} from '../components/index'
-import Header from '../components/Header/Header'
+import {Footer,Header} from './components/index'
 import { Outlet } from 'react-router-dom'
 function App() {
     const[loading,setLoading]=useState(true)
