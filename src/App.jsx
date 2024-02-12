@@ -11,7 +11,7 @@ function App() {
     
     const dispatch=useDispatch()
     useEffect(()=>{
-      authService.Login({email:"abc@gmail.com",password:"abc@12345678"})
+      authService.Login({email:"abcd@gmail.com",password:"abc12345678"})
       .then((ele)=>console.log(ele))
       authService.getCurrentUsers()
       .then((userId)=>{
@@ -26,10 +26,10 @@ function App() {
     .finally(()=>setLoading(false))   
     },[])
   return !loading?(
-    <div>
+    <div className='w-full max-w-7xl mx-auto px-4'>
       <div className='bg-gray-400'>
       <Header/>
-        {/* TODO:{Outlet} */}
+       <Outlet/> 
       <Footer/>
       </div>
     </div>
