@@ -2,14 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { Link,useNavigate } from 'react-router'
+import { Link,useNavigate } from 'react-router-dom'
 import authService from '../../appwrite/auth'
 import {Login as authLogin} from '../store/authSlice'
 import {Input, Button,Logo} from './index'
 function Login() {
     const navigate=useNavigate()
     const dispatch=useDispatch()
-    const {Register, handleSubmit}=useForm()
+    const {register, handleSubmit}=useForm()
     const [error, setError]=useState("")
     const login =async(data)=>{
         setError("")
@@ -22,10 +22,12 @@ function Login() {
                     navigate("/")
                 }
             }
+            console.log(session)
         }
         catch(error){
             setError(error.message)
         }
+        
     }
   return (
     <div className='flex items-center justify-center w-full'>
